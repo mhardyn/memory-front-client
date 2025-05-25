@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
+import {Component, inject} from '@angular/core';
+import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
 import {Category} from '../models';
 import {HeaderComponent} from '../../header/header.component';
+import {ApiService} from '../../api.service';
 
 @Component({
   selector: 'app-word-bank-categories',
   imports: [
     NgIf,
     NgForOf,
-    HeaderComponent
+    HeaderComponent,
+    AsyncPipe
   ],
   templateUrl: './word-bank-categories.component.html',
   styleUrl: './word-bank-categories.component.css',
   standalone: true
 })
 export class WordBankCategoriesComponent {
-  categories: Category[]=[
-    {category_id: 1, category_name: "Sport", cards_count: 1},
-    {category_id: 2, category_name: "Rzeczowniki", cards_count: 0}
-  ];
+  private readonly apiService = inject(ApiService)
+
+  categories$ = this.apiService.getCategories()
 }
