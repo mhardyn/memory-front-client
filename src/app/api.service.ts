@@ -17,4 +17,10 @@ export class ApiService {
   removeCategory(categoryId: number): Observable<any> {
     return this.httpClient.delete(`${BASE_URL}/categories/${categoryId}`);
   }
+
+  addCategory(categoryName: string): Observable<Category> {
+    return this.httpClient.post<Category>(`${BASE_URL}/categories`, {
+      category_name: categoryName
+    })
+  }
 }

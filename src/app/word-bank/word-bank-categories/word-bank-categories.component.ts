@@ -3,6 +3,7 @@ import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
 import {Category} from '../models';
 import {HeaderComponent} from '../../header/header.component';
 import {ApiService} from '../../api.service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-word-bank-categories',
@@ -10,7 +11,8 @@ import {ApiService} from '../../api.service';
     NgIf,
     NgForOf,
     HeaderComponent,
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   templateUrl: './word-bank-categories.component.html',
   styleUrl: './word-bank-categories.component.css',
