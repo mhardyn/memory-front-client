@@ -20,4 +20,10 @@ export class WordBankCategoriesComponent {
   private readonly apiService = inject(ApiService)
 
   categories$ = this.apiService.getCategories()
+
+  removeCategory(categoryId: number) {
+    this.apiService.removeCategory(categoryId).subscribe({
+      next: () => this.categories$ = this.apiService.getCategories(),
+    })
+  }
 }

@@ -10,7 +10,7 @@
             <h2 class="card-title">{{ category.category_name }}</h2>
             <div class="flex gap-2 justify-end">
               <Button class="btn btn-soft btn-sm">Lista fiszek</Button>
-              <Button class="btn btn-soft btn-sm btn-error">Usuń</Button>
+              <Button (click)="removeCategory(category.category_id)" class="btn btn-soft btn-sm btn-error">Usuń</Button>
             </div>
           </div>
         </div>
