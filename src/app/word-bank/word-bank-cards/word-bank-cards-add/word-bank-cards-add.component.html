@@ -1,0 +1,11 @@
+<div class="flex flex-col gap-5">
+  <app-header title="Nowa fiszka"></app-header>
+
+  <form class="fieldset flex flex-col gap-4 mx-auto w-full sm:w-sm" [formGroup]="form" (ngSubmit)="addCard()">
+    <label class="label">Słówko</label>
+    <input type="text" class="input w-full" formControlName="word">
+    <label class="label">Definicja</label>
+    <input type="text" class="input w-full" formControlName="definition">
+    <button [disabled]="form.invalid" class="btn btn-primary">Dodaj fiszkę</button>
+  </form>
+</div>
