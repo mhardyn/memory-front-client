@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
 import {Category} from '../models';
+import {HeaderComponent} from '../../header/header.component';
 
 @Component({
   selector: 'app-word-bank-categories',
   imports: [
     NgIf,
-    NgForOf
+    NgForOf,
+    HeaderComponent
   ],
   templateUrl: './word-bank-categories.component.html',
   styleUrl: './word-bank-categories.component.css',

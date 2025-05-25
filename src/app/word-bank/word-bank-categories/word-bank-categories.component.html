@@ -1,24 +1,30 @@
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-5">
 
-  <ng-container *ngIf="categories.length; else noCategories">
-    <div class="card shadow-sm" *ngFor="let category of categories">
-      <div class="card-body">
-        <h2 class="card-title">{{category.category_name}}</h2>
-        <div class="flex gap-2 justify-end">
-          <Button class="btn btn-soft btn-sm">Lista fiszek</Button>
-          <Button class="btn btn-soft btn-sm btn-error">Usuń</Button>
+  <app-header title="Bank słówek - lista kategorii" backLink="/"></app-header>
+
+  <div class="flex flex-col gap-2">
+
+    <ng-container *ngIf="categories.length; else noCategories">
+      <div class="card shadow-sm" *ngFor="let category of categories">
+        <div class="card-body">
+          <h2 class="card-title">{{ category.category_name }}</h2>
+          <div class="flex gap-2 justify-end">
+            <Button class="btn btn-soft btn-sm">Lista fiszek</Button>
+            <Button class="btn btn-soft btn-sm btn-error">Usuń</Button>
+          </div>
         </div>
       </div>
-    </div>
-  </ng-container>
+    </ng-container>
 
-  <ng-template #noCategories>
-    <div class="flex flex-col gap-4 text-center">
-    <h2 class="text-xl font-bold">Nie masz jeszcze żadnych kategorii.</h2>
-    <div class="flex justify-center">
-      <button class="btn btn-primary">Dodaj kategorię</button>
-    </div>
+    <ng-template #noCategories>
+      <div class="flex flex-col gap-4 text-center">
+        <h2 class="text-xl font-bold">Nie masz jeszcze żadnych kategorii.</h2>
+        <div class="flex justify-center">
+          <button class="btn btn-primary">Dodaj kategorię</button>
+        </div>
+      </div>
+    </ng-template>
+
   </div>
-  </ng-template>
 
 </div>
